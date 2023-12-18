@@ -20,4 +20,5 @@ Route::controller(EquationController::class)->group(function(){
     Route::get('/ecuaciones/index','index')->name('equation.index');
     Route::post('/ecuaciones/store','store')->name('equation.store');
     Route::get('/ecuaciones/show/{id}','show')->name('equation.show');
+    Route::post('/ecuaciones/storeaddress','storeaddress')->name('equation.storeaddress');
 });
