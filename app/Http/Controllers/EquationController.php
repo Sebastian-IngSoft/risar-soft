@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class EquationController extends Controller
 {
+    //crud equation
     public function index(){
         $equation = Equation::all();
         return view('equations.index',compact('equation'));
@@ -20,10 +21,6 @@ class EquationController extends Controller
         $ecuacione->site = $request->site;
         $ecuacione->save();
         return redirect()->route('equation.index');
-    }
-    public function storeaddress(Request $request){
-        $address= Address::create($request->all());
-        return redirect()->route('equation.show',$request->equation_id);
     }
     public function show($id){
         $equation=Equation::find($id);

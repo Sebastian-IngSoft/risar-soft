@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\EquationController;
+use App\Http\Controllers\TorreController;
+use App\Models\Address;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +20,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[AdminController::class,'index'] );
+//para crud equation
 Route::controller(EquationController::class)->group(function(){
     Route::get('/ecuaciones/index','index')->name('equation.index');
     Route::post('/ecuaciones/store','store')->name('equation.store');
     Route::get('/ecuaciones/show/{id}','show')->name('equation.show');
-    Route::post('/ecuaciones/storeaddress','storeaddress')->name('equation.storeaddress');
+});
+//para crud address
+Route::controller(AddressController::class)->group(function(){
+    Route::post('/address/store','store')->name('address.store');
+    Route::put('/address/{address}/update','update')->name('address.update');
+});
+//para crud torre
+Route::controller(TorreController::class)->group(function(){
+    Route::post('/torre/store','store')->name('torre.store');
+    Route::put('/torre/{torre}/update','update')->name('torre.update');
+});
+//para crud contacto
+Route::controller(ContactoController::class)->group(function(){
+    Route::post('/contacto/store','store')->name('contacto.store');
 });

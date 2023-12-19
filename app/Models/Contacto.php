@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contacto extends Model
 {
     use HasFactory;
+    protected $guarded = [];
      //relacion inversa
      public function equation(){
         return $this->belongsTo(Equation::class);
