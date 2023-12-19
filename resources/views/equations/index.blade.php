@@ -72,7 +72,6 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/risar/public/vendor/adminlte/dist/css/bootstrap.min.css">
 @stop
 
 @section('js')

@@ -44,4 +44,5 @@ Route::controller(ContactoController::class)->group(function(){
 //para crud de imagenes
 Route::controller(ImageController::class)->group(function(){
     Route::post('/image/{equation}/file','store')->name('image.file');
+    Route::get('/image/{image}/destroy','destroy')->name('image.destroy');
 });

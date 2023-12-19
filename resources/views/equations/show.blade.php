@@ -104,11 +104,15 @@
             </div>
         </form>
         {{--galeria--}}
-        
+        <div class="d-flex">
         @foreach ($equation->images as $itemimage)
-        <img src="{{asset($itemimage->url)}}" alt="" class="w-25 m-2">
-
+        <div class="m-2">
+        <img src="{{asset($itemimage->url)}}" alt="" class="w-50 m-2">
+        <br>
+        <a href="{{ route('image.destroy', $itemimage->id) }}" class="btn btn-danger">Eliminar</a>
+        </div>
         @endforeach
+        </div>
     </div>
 
 
@@ -277,12 +281,9 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/risar/public/vendor/adminlte/dist/css/bootstrap.min.css">
 @stop
 
 @section('js')
-    <script src="/risar/public/vendor/adminlte/dist/js/bootstrap.bundle.min.js">
-        console.log('Hi!');
-    </script>
+    <script src="/risar/public/vendor/adminlte/dist/js/bootstrap.bundle.min.js"></script>
 
 @stop
