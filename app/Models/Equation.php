@@ -4,11 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Equation extends Model
 {
     use HasFactory;
-        //RELACIONES
+    //hacer directorio para imagenes
+    public function directory($site){
+        Storage::makeDirectory($site);
+    }
+    //RELACIONES
     //relacion uno a uno
     public function torre(){
         return $this->hasOne(Torre::class);

@@ -19,7 +19,9 @@ class EquationController extends Controller
     public function store(Request $request){
         $ecuacione = new Equation();
         $ecuacione->site = $request->site;
+        $ecuacione->directory('public/equation');
         $ecuacione->save();
+        
         return redirect()->route('equation.index');
     }
     public function show($id){

@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            {{--DIRECCION VIEW--}}
+            {{-- DIRECCION VIEW --}}
             <div class="col-4 ">
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
@@ -27,21 +27,21 @@
                     </ul>
                     <div class="card-body">
                         @if (!$equation->address)
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#direccion">
-                            Añadir
-                        </button>    
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#direccion">
+                                Añadir
+                            </button>
                         @else
-                            
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#editardireccion">
-                            Editar
-                        </button>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#editardireccion">
+                                Editar
+                            </button>
                         @endif
 
                     </div>
                 </div>
             </div>
-            {{--TORRE VIEW--}}
+            {{-- TORRE VIEW --}}
             <div class="col-4 ">
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
@@ -56,20 +56,19 @@
                     </ul>
                     <div class="card-body ">
                         @if (!$equation->torre)
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#torre">
-                            Añadir
-                        </button>    
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#torre">
+                                Añadir
+                            </button>
                         @else
-                            
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#editartorre">
-                            Editar
-                        </button>
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#editartorre">
+                                Editar
+                            </button>
                         @endif
                     </div>
                 </div>
             </div>
-            {{--CONTACTOS VIEW--}}
+            {{-- CONTACTOS VIEW --}}
             <div class="col-4 ">
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
@@ -91,17 +90,32 @@
                     <div class="card-body">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactos">
                             Añadir
-                        </button>    
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        <h3>Subir imagenes</h3>
+        <form action="{{ route('image.file', $equation) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="d-flex">
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="file" accept="image/*">
+                <button type="submit" class="btn btn-primary">Subir</button>
+            </div>
+        </form>
+        {{--galeria--}}
+        
+        @foreach ($equation->images as $itemimage)
+        <img src="{{asset($itemimage->url)}}" alt="" class="w-25 m-2">
+
+        @endforeach
     </div>
 
 
 
+
     {{-- Modals --}}
-    {{--DIRECCION STORE--}}
+    {{-- DIRECCION STORE --}}
     <div class="modal fade" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -133,30 +147,37 @@
             </div>
         </div>
     </div>
-    {{--EDITAR DIRECCION--}}
+    {{-- EDITAR DIRECCION --}}
     <div class="modal fade" id="editardireccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Editar direccion</h1>
                 </div>
-                <form action="{{ route('address.update',$equation->address) }}" method="POST">
+                <form action="{{ route('address.update', $equation->address) }}" method="POST">
                     @csrf
                     @method('put')
                     <div class="modal-body">
                         <label for="">Direccion</label>
-                        <input value="{{$equation->address->larga}}" name="larga" type="text" class="form-control form-control-lg mb-1" placeholder="Direccion completa">
+                        <input value="{{ $equation->address->larga }}" name="larga" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Direccion completa">
                         <label for="">Departamento</label>
-                        <input value="{{$equation->address->departamento}}" name="departamento" type="text" class="form-control form-control-lg mb-1" placeholder="Departamento">
+                        <input value="{{ $equation->address->departamento }}" name="departamento" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Departamento">
                         <label for="">Provincia</label>
-                        <input value="{{$equation->address->provincia}}" name="provincia" type="text" class="form-control form-control-lg mb-1" placeholder="Provincia">
+                        <input value="{{ $equation->address->provincia }}" name="provincia" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Provincia">
                         <label for="">Distrito</label>
-                        <input value="{{$equation->address->distrito}}" name="distrito" type="text" class="form-control form-control-lg mb-1" placeholder="Distrito">
+                        <input value="{{ $equation->address->distrito }}" name="distrito" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Distrito">
                         <label for="">Latitud</label>
-                        <input value="{{$equation->address->latitud}}" name="latitud" type="number" step="any" class="form-control form-control-lg mb-1" placeholder="Latitud">
+                        <input value="{{ $equation->address->latitud }}" name="latitud" type="number" step="any"
+                            class="form-control form-control-lg mb-1" placeholder="Latitud">
                         <label for="">Longitud</label>
-                        <input value="{{$equation->address->longitud}}" name="longitud" type="number" step="any" class="form-control form-control-lg mb-1" placeholder="Longitud">
-                        <input value="{{$equation->address->id}}" name="id" type="text" hidden value="{{ $equation->id }}">
+                        <input value="{{ $equation->address->longitud }}" name="longitud" type="number" step="any"
+                            class="form-control form-control-lg mb-1" placeholder="Longitud">
+                        <input value="{{ $equation->address->id }}" name="id" type="text" hidden
+                            value="{{ $equation->id }}">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -166,7 +187,7 @@
             </div>
         </div>
     </div>
-    {{--TORRES STORE--}}
+    {{-- TORRES STORE --}}
     <div class="modal fade" id="torre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -192,23 +213,26 @@
             </div>
         </div>
     </div>
-    {{--EDITAR TORRE--}}
+    {{-- EDITAR TORRE --}}
     <div class="modal fade" id="editartorre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Editar torre</h1>
                 </div>
-                <form action="{{ route('torre.update',$equation->torre) }}" method="POST">
+                <form action="{{ route('torre.update', $equation->torre) }}" method="POST">
                     @csrf
                     @method('put')
                     <div class="modal-body">
                         <label for="">Tipo de torre</label>
-                        <input value="{{$equation->torre->tipo}}" name="tipo" type="text" class="form-control form-control-lg mb-1" placeholder="Tipo de torre">
+                        <input value="{{ $equation->torre->tipo }}" name="tipo" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Tipo de torre">
                         <label for="">Altura</label>
-                        <input value="{{$equation->torre->altura}}" name="altura" type="number" step="any" class="form-control form-control-lg mb-1" placeholder="Altura">
+                        <input value="{{ $equation->torre->altura }}" name="altura" type="number" step="any"
+                            class="form-control form-control-lg mb-1" placeholder="Altura">
                         <label for="">Estacion</label>
-                        <input value="{{$equation->torre->estacion}}" name="estacion" type="text" class="form-control form-control-lg mb-1" placeholder="Provincia">
+                        <input value="{{ $equation->torre->estacion }}" name="estacion" type="text"
+                            class="form-control form-control-lg mb-1" placeholder="Provincia">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -218,7 +242,7 @@
             </div>
         </div>
     </div>
-    {{--CONTACTOS AÑADIR--}}
+    {{-- CONTACTOS AÑADIR --}}
 
     <div class="modal fade" id="contactos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -230,9 +254,11 @@
                     @csrf
                     <div class="modal-body">
                         <label for="">Nombre</label>
-                        <input name="nombre" type="text" class="form-control form-control-lg mb-1" placeholder="Nombre">
+                        <input name="nombre" type="text" class="form-control form-control-lg mb-1"
+                            placeholder="Nombre">
                         <label for="">Telefono</label>
-                        <input name="telefono" type="number" step="any" class="form-control form-control-lg mb-1" placeholder="Telefono">
+                        <input name="telefono" type="number" step="any" class="form-control form-control-lg mb-1"
+                            placeholder="Telefono">
                         <input name="equation_id" type="text" hidden value="{{ $equation->id }}">
                     </div>
                     <div class="modal-footer">
