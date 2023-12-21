@@ -1,19 +1,19 @@
-<table class="table table-bordered">
-    <thead>
+<table>
+    <thead style="">
         <tr>
-            <th scope="col">1</th>
-            <th scope="col">2</th>
-            <th scope="col">3</th>
-            <th scope="col">4</th>
-            <th scope="col">5</th>
-            <th scope="col">6</th>
-            <th scope="col">7</th>
-            <th scope="col">8</th>
-            <th scope="col">9</th>
-            <th scope="col">10</th>
-            <th scope="col">11</th>
-            <th scope="col">12</th>
-            <th scope="col">13</th>
+            <th scope="col" style="width: 2.08cm"></th>
+            <th scope="col" style="width: 0.54cm"></th>
+            <th scope="col" style="width: 3.57cm"></th>
+            <th scope="col" style="width: 4.20cm"></th>
+            <th scope="col" style="width: 1.91cm"></th>
+            <th scope="col" style="width: 1.80cm"></th>
+            <th scope="col" style="width: 1.16cm"></th>
+            <th scope="col" style="width: 2.23cm"></th>
+            <th scope="col" style="width: 2.21cm"></th>
+            <th scope="col" style="width: 3.56cm"></th>
+            <th scope="col" style="width: 2.02cm"></th>
+            <th scope="col" style="width: 2.37cm"></th>
+            <th scope="col" style="width: 2.40cm"></th>
         </tr>
         <tr>
             <th scope="col" colspan="3" rowspan="3">Logo</th>
@@ -21,7 +21,7 @@
                 <div>TIPO DE DOCUMENTO:</div>
                 <div class="fw-light">FORMATO</div>
             </th>
-            <th scope="col" colspan="3" class="text-center">Código: CI-F-002</th>
+            <th scope="col" colspan="3" style="text-align: center">Código: CI-F-002</th>
         </tr>
         <tr>
             <th scope="col">Versión: 3</th>
@@ -43,44 +43,44 @@
         </tr>
         <tr>
             <th scope="col"colspan="3">Nombre Site Entel: </th>
-            <th scope="col"colspan="6" class="text-center">{{ $equation->site }}</th>
+            <th scope="col"colspan="6" style="text-align: center">{{ $equation->site }}</th>
             <th scope="col">ID Entel:</th>
-            <th scope="col" colspan="3" class="text-center">0134676</th>
+            <th scope="col" colspan="3" style="text-align: center">0134676</th>
         </tr>
         <tr>
             <th scope="col"colspan="3">Nombre Site Operador / Torreta: </th>
-            <th scope="col"colspan="6" class="text-center">{{ $equation->site }}</th>
+            <th scope="col"colspan="6" style="text-align: center">{{ $equation->site }}</th>
             <th scope="col">ID O/T:</th>
-            <th scope="col" colspan="3" class="text-center">PE-IC-1019</th>
+            <th scope="col" colspan="3" style="text-align: center">PE-IC-1019</th>
         <tr>
             <th scope="col"colspan="2">Direccion: </th>
-            <th scope="col"colspan="7" class="text-center">{{ $equation->address->larga }}</th>
+            <th scope="col"colspan="7" style="text-align: center">{{ $equation->address->larga }}</th>
             <th scope="col">Distrito:</th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->address->distrito }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->address->distrito }}</th>
         </tr>
         <tr>
             <th scope="col" colspan="2">Provincia: </th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->address->provincia }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->address->provincia }}</th>
             <th scope="col" colspan="2">Departamento</th>
             <th scope="col" colspan="2">{{ $equation->address->departamento }}</th>
             <th scope="col">Altura Torre:</th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->torre->altura }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->torre->altura }}</th>
         </tr>
         <tr>
             <th scope="col" colspan="2">Tipo Site: </th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->torre->estacion }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->torre->estacion }}</th>
             <th scope="col" colspan="2">Tipo Torre:</th>
             <th scope="col" colspan="2">{{ $equation->torre->tipo }}</th>
             <th scope="col">Altura Edificación:</th>
-            <th scope="col" colspan="3" class="text-center">{{ '-------' }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ '-------' }}</th>
         </tr>
         <tr>
             <th scope="col" colspan="2">Longitud: </th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->address->longitud }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->address->longitud }}</th>
             <th scope="col" colspan="2">Latitud:</th>
-            <th scope="col" colspan="2">{{ $equation->address->latitud }}</th>
+            <th scope="col" colspan="2" style="text-align: center">{{ $equation->address->latitud }}</th>
             <th scope="col">Altura Total:</th>
-            <th scope="col" colspan="3" class="text-center">{{ $equation->torre->altura }}</th>
+            <th scope="col" colspan="3" style="text-align: center">{{ $equation->torre->altura }}</th>
         </tr>
         <tr>
             <th colspan="13"></th>
@@ -92,13 +92,13 @@
         </tr>
         <tr>
             <th scope="col"colspan="3">Contratista: </th>
-            <th scope="col"colspan="10" class="text-center">RISAR INGENIEROS ESTRUCTURALES S.A.C.</th>
+            <th scope="col"colspan="10" style="text-align: center">RISAR INGENIEROS ESTRUCTURALES S.A.C.</th>
         </tr>
         <tr>
             <th scope="col"colspan="3">Supervisor de Contratista: </th>
-            <th scope="col"colspan="6" class="text-center">Ing. Juan Rivera Hurtado</th>
+            <th scope="col"colspan="6" style="text-align: center">Ing. Juan Rivera Hurtado</th>
             <th scope="col">Celular</th>
-            <th scope="col" colspan="3" class="text-center">975 299 683</th>
+            <th scope="col" colspan="3" style="text-align: center">975 299 683</th>
         </tr>
         <tr>
             <th colspan="13"></th>
@@ -108,18 +108,18 @@
         </tr>
         <tr>
             <th scope="col" colspan="3">Fecha Inicio Real de obra:</th>
-            <th scope="col" colspan="4" class="text-center">09/02/2021</th>
+            <th scope="col" colspan="4" style="text-align: center">09/02/2021</th>
             <th scope="col" colspan="2">Fecha Termino Cronograma:</th>
-            <th scope="col" colspan="4" class="text-center">09/02/2021</th>
+            <th scope="col" colspan="4" style="text-align: center">09/02/2021</th>
         </tr>
         <tr>
             <th scope="col" colspan="3">Periodo de avance de obtra:</th>
-            <th scope="col" colspan="2" class="text-center">Del: 09/02/021</th>
-            <th scope="col" colspan="2" class="text-center">Hasta: 09/02/2021</th>
+            <th scope="col" colspan="2" style="text-align: center">Del: 09/02/021</th>
+            <th scope="col" colspan="2" style="text-align: center">Hasta: 09/02/2021</th>
             <th scope="col" colspan="2">Fecha de Supervisión</th>
-            <th scope="col" colspan="2" class="text-center">09/02/2021</th>{{-- no se respeto las proporciones con el original --}}
+            <th scope="col" colspan="2" style="text-align: center">09/02/2021</th>{{-- no se respeto las proporciones con el original --}}
             <th scope="col" colspan="1">% Avance</th>
-            <th scope="col" colspan="1" class="text-center">100%</th>
+            <th scope="col" colspan="1" style="text-align: center">100%</th>
         </tr>
         <tr>
             <th colspan="13"></th>
@@ -142,39 +142,39 @@
             <th scope="col" style="background: #daeef3" colspan="13">V.- PARTIDAS DE OBRA EN EJECUCIÓN:</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">ITEM</th>
+            <th scope="col" style="text-align: center">ITEM</th>
             <th scope="col" colspan="11">PARTIDA DE OBRA SEGÚN AVANCE SEMANAL</th>
             <th scope="col">% DE AVANCE</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">1.00</th>
+            <th scope="col" style="text-align: center">1.00</th>
             <th scope="col" colspan="11">Vista de Tablero Integrado</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">2.00</th>
+            <th scope="col" style="text-align: center">2.00</th>
             <th scope="col" colspan="11">Vista de Equipos Electronicos - Mini Shelters</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">3.00</th>
+            <th scope="col" style="text-align: center">3.00</th>
             <th scope="col" colspan="11">Vista de Dados Existentes</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">4.00</th>
+            <th scope="col" style="text-align: center">4.00</th>
             <th scope="col" colspan="11">Vistan General de Soportes Libres</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">5.00</th>
+            <th scope="col" style="text-align: center">5.00</th>
             <th scope="col" colspan="11">Vista de Antena MW Existente</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
-            <th scope="col" class="text-center">6.00</th>
+            <th scope="col" style="text-align: center">6.00</th>
             <th scope="col" colspan="11">Vista de Antenas RF y RRU Existente</th>
-            <th scope="col" class="text-center">100</th>
+            <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th colspan="13"></th>

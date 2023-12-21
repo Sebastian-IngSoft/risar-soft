@@ -18,22 +18,8 @@
         <table class="table table-bordered"">
             <thead>
                 <tr>
-                    <th scope="col">1</th>
-                    <th scope="col">2</th>
-                    <th scope="col">3</th>
-                    <th scope="col">4</th>
-                    <th scope="col">5</th>
-                    <th scope="col">6</th>
-                    <th scope="col">7</th>
-                    <th scope="col">8</th>
-                    <th scope="col">9</th>
-                    <th scope="col">10</th>
-                    <th scope="col">11</th>
-                    <th scope="col">12</th>
-                    <th scope="col">13</th>
-                </tr>
-                <tr>
-                    <th scope="col" colspan="3" rowspan="3">Logo</th>
+                    <th scope="col" colspan="3" rowspan="3"><img src="{{ asset('/storage/client/entel.jpeg') }}"
+                            alt=""></th>
                     <th scope="col" colspan="7" rowspan="2">
                         <div>TIPO DE DOCUMENTO:</div>
                         <div class="fw-light">FORMATO</div>
@@ -144,14 +130,34 @@
                 <tr>
                     <th scope="col" style="background: #daeef3" colspan="13">IV.- FOTOS PANORAMICAS DEL SITE:</th>
                 </tr>
-                <tr>
-                    <th scope="col" colspan="7"></th>
-                    <th scope="col" colspan="6"></th>
-                </tr>
-                <tr>
-                    <th scope="col" colspan="7"></th>
-                    <th scope="col" colspan="6"></th>
-                </tr>
+                @if ($equation->images->count() >= 4)
+                    <tr>
+                        <th scope="col" colspan="7">
+                            <center><img src="{{ asset($equation->images[0]->url) }}" class="w-25" alt="">
+                            </center>
+                        </th>
+                        <th scope="col" colspan="6">
+                            <center><img src="{{ asset($equation->images[1]->url) }}" class="w-25" alt="">
+                            </center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="7">
+                            <center><img src="{{ asset($equation->images[2]->url) }}" class="w-25" alt="">
+                            </center>
+                        </th>
+                        <th scope="col" colspan="6">
+                            <center><img src="{{ asset($equation->images[3]->url) }}" class="w-25" alt="">
+                            </center>
+                        </th>
+                    </tr>
+                    
+                @else
+                    <tr>
+                        <th colspan="13"><h1 class="text-danger">SE NECESITA 4 IMAGENES</h1></th>
+                    </tr>                    
+                @endif
+
                 <tr>
                     <th colspan="13"></th>
                 </tr>

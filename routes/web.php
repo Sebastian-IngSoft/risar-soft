@@ -55,5 +55,6 @@ Route::controller(ReportController::class)->group(function(){
     Route::get('/report','index')->name('report.index');
     Route::get('/report/show/{equation}','show')->name('report.show');
     Route::post('/report/export/{equation}','export')->name('report.export');
+    Route::get('/report/test','test');
 });
 

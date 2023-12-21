@@ -9,14 +9,29 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithDrawings;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use Maatwebsite\Excel\Concerns\WithStyles;
 
-class ReportExport implements FromView,ShouldAutoSize,WithDrawings{
+class ReportExport implements FromView,ShouldAutoSize,WithDrawings,WithStyles
+{
 
     use Exportable;
     private $id;
     public function __construct($ideq)
     {
         $this->id = $ideq;
+
+    }
+
+    public function styles(Worksheet $sheet){
+        
+        $sheet->getStyle('A2:M38')->applyFromArray([
+            'borders'=>[
+                'allBorders'=>[
+                    'borderStyle'=>'thin',
+                ],
+            ],
+        ]);
 
     }
     public function drawings()
@@ -32,6 +47,6 @@ class ReportExport implements FromView,ShouldAutoSize,WithDrawings{
     public function view():View{
         $equation = Equation::find($this->id);
         return view('reports.excel',compact('equation'));
-        
     }
+
 }
