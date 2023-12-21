@@ -114,8 +114,10 @@
         @endforeach
         </div>
     </div>
-
-
+    <form action="{{ route('equation.excel') }}" method="POST" target="__blank">
+        @csrf
+        <button class="btn btn-primary" type="submit">excel</button>
+    </form>
 
 
     {{-- Modals --}}
