@@ -13,10 +13,10 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 class ReportExport implements FromView,ShouldAutoSize,WithDrawings{
 
     use Exportable;
-    private $equation;
-    public function __construct()
+    private $id;
+    public function __construct($ideq)
     {
-        $this->equation = Equation::find(1);
+        $this->id = $ideq;
 
     }
     public function drawings()
@@ -30,9 +30,8 @@ class ReportExport implements FromView,ShouldAutoSize,WithDrawings{
         return $drawing;
     }
     public function view():View{
-        return view('equations.export',[
-            'equation'=>$this->equation
-        ]);
+        $equation = Equation::find($this->id);
+        return view('reports.excel',compact('equation'));
         
     }
 }

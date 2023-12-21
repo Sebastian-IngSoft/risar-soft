@@ -323,6 +323,11 @@ return [
             'text' => 'Ecuaciones',
             'url'  => 'ecuaciones/index',
             'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Reportes',
+            'url'  => '/report',
+            'icon' => 'fas fa-fw fa-user',
         ],/*
         [
             'text' => 'change_password',

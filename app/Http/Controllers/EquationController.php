@@ -33,7 +33,7 @@ class EquationController extends Controller
 
     //para exportar
     public function excelreport(){
-        return Excel::download( new ReportExport, 'reporte.xlsx');
+        //return Excel::download( new ReportExport, 'reporte.xlsx');
 
     }
 }

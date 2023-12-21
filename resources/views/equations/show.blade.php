@@ -114,12 +114,12 @@
         @endforeach
         </div>
     </div>
+    {{--
     <form action="{{ route('equation.excel') }}" method="POST" target="__blank">
         @csrf
         <button class="btn btn-primary" type="submit">excel</button>
     </form>
-
-
+    --}}
     {{-- Modals --}}
     {{-- DIRECCION STORE --}}
     <div class="modal fade" id="direccion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
