@@ -31,9 +31,4 @@ class EquationController extends Controller
         return view('equations.show',compact('equation'));
     }
 
-    //para exportar
-    public function excelreport(){
-        //return Excel::download( new ReportExport, 'reporte.xlsx');
-
-    }
 }

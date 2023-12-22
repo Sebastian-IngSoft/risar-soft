@@ -98,20 +98,27 @@
         <h3>Subir imagenes</h3>
         <form action="{{ route('image.file', $equation) }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="d-flex">
+            <div class="">
                 <input class="form-control form-control-lg" id="formFileLg" type="file" name="file" accept="image/*">
-                <button type="submit" class="btn btn-primary">Subir</button>
+                <label for="">Descripcion</label>
+                <br>
+                <div class="d-flex">
+                    <input type="text"class="form-control"name="descripcion">
+                    <button type="submit" class="btn btn-primary">Subir</button>
+                </div>
             </div>
         </form>
-        {{--galeria--}}
+        {{-- galeria --}}
         <div class="d-flex">
-        @foreach ($equation->images as $itemimage)
-        <div class="m-2">
-        <img src="{{asset($itemimage->url)}}" alt="" class="w-50 m-2">
-        <br>
-        <a href="{{ route('image.destroy', $itemimage->id) }}" class="btn btn-danger">Eliminar</a>
-        </div>
-        @endforeach
+            @foreach ($equation->images as $itemimage)
+                <div class="m-2">
+                    <img src="{{ asset($itemimage->url) }}" alt="" class="w-50 m-2">
+                    <br>
+                    {{$itemimage->descripcion}}
+                    <br>
+                    <a href="{{ route('image.destroy', $itemimage->id) }}" class="btn btn-danger">Eliminar</a>
+                </div>
+            @endforeach
         </div>
     </div>
     {{--
@@ -160,36 +167,39 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Editar direccion</h1>
                 </div>
-                <form action="{{ route('address.update', $equation->address) }}" method="POST">
-                    @csrf
-                    @method('put')
-                    <div class="modal-body">
-                        <label for="">Direccion</label>
-                        <input value="{{ $equation->address->larga }}" name="larga" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Direccion completa">
-                        <label for="">Departamento</label>
-                        <input value="{{ $equation->address->departamento }}" name="departamento" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Departamento">
-                        <label for="">Provincia</label>
-                        <input value="{{ $equation->address->provincia }}" name="provincia" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Provincia">
-                        <label for="">Distrito</label>
-                        <input value="{{ $equation->address->distrito }}" name="distrito" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Distrito">
-                        <label for="">Latitud</label>
-                        <input value="{{ $equation->address->latitud }}" name="latitud" type="number" step="any"
-                            class="form-control form-control-lg mb-1" placeholder="Latitud">
-                        <label for="">Longitud</label>
-                        <input value="{{ $equation->address->longitud }}" name="longitud" type="number" step="any"
-                            class="form-control form-control-lg mb-1" placeholder="Longitud">
-                        <input value="{{ $equation->address->id }}" name="id" type="text" hidden
-                            value="{{ $equation->id }}">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-warning">Editar</button>
-                    </div>
-                </form>
+                @if ($equation->address)
+                    <form action="{{ route('address.update', $equation->address) }}" method="POST">
+                        @csrf
+                        @method('put')
+                        <div class="modal-body">
+                            <label for="">Direccion</label>
+                            <input value="{{ $equation->address->larga }}" name="larga" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Direccion completa">
+                            <label for="">Departamento</label>
+                            <input value="{{ $equation->address->departamento }}" name="departamento" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Departamento">
+                            <label for="">Provincia</label>
+                            <input value="{{ $equation->address->provincia }}" name="provincia" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Provincia">
+                            <label for="">Distrito</label>
+                            <input value="{{ $equation->address->distrito }}" name="distrito" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Distrito">
+                            <label for="">Latitud</label>
+                            <input value="{{ $equation->address->latitud }}" name="latitud" type="number"
+                                step="any" class="form-control form-control-lg mb-1" placeholder="Latitud">
+                            <label for="">Longitud</label>
+                            <input value="{{ $equation->address->longitud }}" name="longitud" type="number"
+                                step="any" class="form-control form-control-lg mb-1" placeholder="Longitud">
+                            <input value="{{ $equation->address->id }}" name="id" type="text" hidden
+                                value="{{ $equation->id }}">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-warning">Editar</button>
+                        </div>
+                    </form>
+                @endif
+
             </div>
         </div>
     </div>
@@ -226,25 +236,28 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Editar torre</h1>
                 </div>
-                <form action="{{ route('torre.update', $equation->torre) }}" method="POST">
-                    @csrf
-                    @method('put')
-                    <div class="modal-body">
-                        <label for="">Tipo de torre</label>
-                        <input value="{{ $equation->torre->tipo }}" name="tipo" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Tipo de torre">
-                        <label for="">Altura</label>
-                        <input value="{{ $equation->torre->altura }}" name="altura" type="number" step="any"
-                            class="form-control form-control-lg mb-1" placeholder="Altura">
-                        <label for="">Estacion</label>
-                        <input value="{{ $equation->torre->estacion }}" name="estacion" type="text"
-                            class="form-control form-control-lg mb-1" placeholder="Provincia">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-warning">Editar</button>
-                    </div>
-                </form>
+                @if ($equation->torre)
+                    <form action="{{ route('torre.update', $equation->torre) }}" method="POST">
+                        @csrf
+                        @method('put')
+                        <div class="modal-body">
+                            <label for="">Tipo de torre</label>
+                            <input value="{{ $equation->torre->tipo }}" name="tipo" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Tipo de torre">
+                            <label for="">Altura</label>
+                            <input value="{{ $equation->torre->altura }}" name="altura" type="number" step="any"
+                                class="form-control form-control-lg mb-1" placeholder="Altura">
+                            <label for="">Estacion</label>
+                            <input value="{{ $equation->torre->estacion }}" name="estacion" type="text"
+                                class="form-control form-control-lg mb-1" placeholder="Provincia">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-warning">Editar</button>
+                        </div>
+                    </form>
+                @endif
+
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use Maatwebsite\Excel\Concerns\WithStyles;
 
-class ReportExport implements FromView,ShouldAutoSize,WithDrawings,WithStyles
+class ReportExport implements FromView,ShouldAutoSize,/*WithDrawings,*/WithStyles
 {
 
     use Exportable;
@@ -34,7 +34,7 @@ class ReportExport implements FromView,ShouldAutoSize,WithDrawings,WithStyles
         ]);
 
     }
-    public function drawings()
+    /*public function drawings()
     {
         $drawing=new Drawing;
         $drawing->setName('imagen');
@@ -43,7 +43,7 @@ class ReportExport implements FromView,ShouldAutoSize,WithDrawings,WithStyles
         $drawing->setHeight(90);
         $drawing->setCoordinates('A10');
         return $drawing;
-    }
+    }*/
     public function view():View{
         $equation = Equation::find($this->id);
         return view('reports.excel',compact('equation'));

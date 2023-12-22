@@ -11,12 +11,14 @@ class ImageController extends Controller
 {
     public function store(Equation $equation,Request $request){
         $request->validate([
-            'file'=>'required|image'
+            'file'=>'required|image',
+            'descripcion'=>'required',
         ]);
         $imagen = $request->file('file')->store('public/equation');
         $url = Storage::url($imagen);
         $equation->images()->create([
-            'url'=> $url
+            'url'=> $url,
+            'descripcion'=> $request->descripcion
         ]);
         return redirect()->route('equation.show',$equation);
     }
