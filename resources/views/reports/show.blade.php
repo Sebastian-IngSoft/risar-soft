@@ -171,32 +171,32 @@
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">1.00</th>
-                    <th scope="col" colspan="11">Vista de Tablero Integrado</th>
+                    <th scope="col" colspan="11">{{$equation->images[4]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">2.00</th>
-                    <th scope="col" colspan="11">Vista de Equipos Electronicos - Mini Shelters</th>
+                    <th scope="col" colspan="11">{{$equation->images[5]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">3.00</th>
-                    <th scope="col" colspan="11">Vista de Dados Existentes</th>
+                    <th scope="col" colspan="11">{{$equation->images[6]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">4.00</th>
-                    <th scope="col" colspan="11">Vistan General de Soportes Libres</th>
+                    <th scope="col" colspan="11">{{$equation->images[7]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">5.00</th>
-                    <th scope="col" colspan="11">Vista de Antena MW Existente</th>
+                    <th scope="col" colspan="11">{{$equation->images[8]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
                     <th scope="col" class="text-center">6.00</th>
-                    <th scope="col" colspan="11">Vista de Antenas RF y RRU Existente</th>
+                    <th scope="col" colspan="11">{{$equation->images[9]->descripcion}}</th>
                     <th scope="col" class="text-center">100</th>
                 </tr>
                 <tr>
@@ -206,9 +206,12 @@
                     <th scope="col" style="background: #daeef3" colspan="13">VI.- REPORTE GRAFICO</th>
                 </tr>
                 <tr>
-                    <th scope="col" colspan="6"></th>
+                    <th scope="col" colspan="13"></th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[4]->url) }}" class="w-50"></center></th>
                     <th scope="col" colspan="1"></th>
-                    <th scope="col" colspan="6"></th>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[5]->url) }}" class="w-50"></center></th>
                 </tr>
                 <tr>
                     <th scope="col" colspan="1">ITEM</th>
@@ -221,12 +224,64 @@
                 </tr>
                 <tr>
                     <th scope="col" colspan="1">1.00</th>
-                    <th scope="col" colspan="4">Vista de Tablero Integrado</th>
+                    <th scope="col" colspan="4">{{$equation->images[4]->descripcion}}</th>
                     <th scope="col" colspan="1">1</th>
                     <th scope="col" colspan="1"></th>
                     <th scope="col" colspan="1">2.00</th>
-                    <th scope="col" colspan="4">Vista de Equipos Electronicos - Mini Shelters</th>
+                    <th scope="col" colspan="4">{{$equation->images[5]->descripcion}}</th>
                     <th scope="col" colspan="1">2</th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="13"></th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[6]->url) }}" class="w-50"></center></th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[7]->url) }}" class="w-50"></center></th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="1">ITEM</th>
+                    <th scope="col" colspan="4">PARTIDA</th>
+                    <th scope="col" colspan="1">FOTO</th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="1">ITEM</th>
+                    <th scope="col" colspan="4">PARTIDA</th>
+                    <th scope="col" colspan="1">FOTO</th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="1">3.00</th>
+                    <th scope="col" colspan="4">{{$equation->images[6]->descripcion}}</th>
+                    <th scope="col" colspan="1">3</th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="1">4.00</th>
+                    <th scope="col" colspan="4">{{$equation->images[7]->descripcion}}</th>
+                    <th scope="col" colspan="1">4</th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="13"></th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[8]->url) }}" class="w-50"></center></th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="6"><center><img src="{{ asset($equation->images[9]->url) }}" class="w-50"></center></th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="1">ITEM</th>
+                    <th scope="col" colspan="4">PARTIDA</th>
+                    <th scope="col" colspan="1">FOTO</th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="1">ITEM</th>
+                    <th scope="col" colspan="4">PARTIDA</th>
+                    <th scope="col" colspan="1">FOTO</th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="1">5.00</th>
+                    <th scope="col" colspan="4">{{$equation->images[8]->descripcion}}</th>
+                    <th scope="col" colspan="1">5</th>
+                    <th scope="col" colspan="1"></th>
+                    <th scope="col" colspan="1">6.00</th>
+                    <th scope="col" colspan="4">{{$equation->images[9]->descripcion}}</th>
+                    <th scope="col" colspan="1">6</th>
                 </tr>
 
             </thead>
