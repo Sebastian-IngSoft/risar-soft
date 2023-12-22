@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Equation extends Model
 {
     use HasFactory;
-    //hacer directorio para imagenes
+    //hacer directorio para imagenes al crear el primer site
     public function directory($site){
         Storage::makeDirectory($site);
     }

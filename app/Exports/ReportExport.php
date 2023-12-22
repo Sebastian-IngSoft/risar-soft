@@ -19,12 +19,13 @@ class ReportExport implements FromView,ShouldAutoSize,/*WithDrawings,*/WithStyle
     private $id;
     public function __construct($ideq)
     {
+        //para que sepa que equation exportar
         $this->id = $ideq;
 
     }
 
     public function styles(Worksheet $sheet){
-        
+        //poniendo bordes
         $sheet->getStyle('A2:M38')->applyFromArray([
             'borders'=>[
                 'allBorders'=>[
@@ -35,7 +36,8 @@ class ReportExport implements FromView,ShouldAutoSize,/*WithDrawings,*/WithStyle
 
     }
     /*public function drawings()
-    {
+    {  
+        //dibuja segun cordenadas, solo lo que se pasa al return
         $drawing=new Drawing;
         $drawing->setName('imagen');
         $drawing->setDescription('imagen');
@@ -45,6 +47,7 @@ class ReportExport implements FromView,ShouldAutoSize,/*WithDrawings,*/WithStyle
         return $drawing;
     }*/
     public function view():View{
+        //dirige al view la plantilla original que se exportara acepta css en redimencion de tamaños y backgroud, se sigue descubriendo
         $equation = Equation::find($this->id);
         return view('reports.excel',compact('equation'));
     }

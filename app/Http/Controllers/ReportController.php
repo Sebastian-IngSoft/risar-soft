@@ -14,13 +14,16 @@ class ReportController extends Controller
         return view('reports.index', compact('equation'));
     }
     public function show(Equation $equation){
+        //muesta la plantilla de como se presentara en el export, la plantilla original es reports excel
         return view('reports.show',compact('equation'));
     }
     
     public function export(Equation $equation){
+        //descarga el excel
         return Excel::download( new ReportExport($equation->id),'report.xlsx');
     }
     public function test(){
+        //solo para poder ver la plantilla original
         $equation=Equation::find(1);
         return view('reports.excel',compact('equation'));
     }
