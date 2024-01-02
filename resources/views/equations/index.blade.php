@@ -9,9 +9,18 @@
 @section('content')
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Nuevo site
-    </button>
+    <div  class="d-flex">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Nuevo site
+        </button>
+        <div class="ml-auto ">
+            <form action="{{ route('import.equations') }}" method="POST" enctype="multipart/form-data" class="d-flex">
+                @csrf
+                <input type="file" name="file" id="" class="form-control" accept=".csv,.xlsx">
+                <button type="submit" class="btn btn-success">Importar</button>
+            </form>
+        </div>
+    </div>
     <br>
     <br>
     <table class="table table-hover">
@@ -35,8 +44,7 @@
                     </td>
                     <td>
                         @if ($itemequation->torre)
-                        {{ $itemequation->torre->tipo }}
-
+                            {{ $itemequation->torre->tipo }}
                         @endif
                     </td>
                     <td class="text-center"><a href="{{ route('equation.show', $itemequation->id) }}"

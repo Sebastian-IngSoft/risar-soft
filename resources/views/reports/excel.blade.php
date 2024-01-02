@@ -148,32 +148,32 @@
         </tr>
         <tr>
             <th scope="col" style="text-align: center">1.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[4]->descripcion }}</th>
+            <th scope="col" colspan="11">Vista de Tablero Integrado</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th scope="col" style="text-align: center">2.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[5]->descripcion }}</th>
+            <th scope="col" colspan="11">Vista de Equipos Electronicos - Mini Shelters</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th scope="col" style="text-align: center">3.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[6]->descripcion }}</th>
+            <th scope="col" colspan="11">Vista de Dados Existentes</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th scope="col" style="text-align: center">4.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[7]->descripcion }}</th>
+            <th scope="col" colspan="11">Vistan General de Soportes Libres</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th scope="col" style="text-align: center">5.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[8]->descripcion }}</th>
+            <th scope="col" colspan="11">Vista de Antena MW Existente</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
             <th scope="col" style="text-align: center">6.00</th>
-            <th scope="col" colspan="11">{{ $equation->images[9]->descripcion }}</th>
+            <th scope="col" colspan="11">Vista de Antenas RF y RRU Existente</th>
             <th scope="col" style="text-align: center">100</th>
         </tr>
         <tr>
@@ -201,11 +201,11 @@
         </tr>
         <tr>
             <th scope="col" colspan="1">1.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[4]->descripcion }}</th>
+            <th scope="col" colspan="4">Vista de Tablero Integrado</th>
             <th scope="col" colspan="1">1</th>
             <th scope="col" colspan="1"></th>
             <th scope="col" colspan="1">2.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[5]->descripcion }}</th>
+            <th scope="col" colspan="4">Vista de Equipos Electronicos - Mini Shelters</th>
             <th scope="col" colspan="1">2</th>
         </tr>
         <tr>
@@ -227,11 +227,11 @@
         </tr>
         <tr>
             <th scope="col" colspan="1">3.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[6]->descripcion }}</th>
+            <th scope="col" colspan="4">Vista de Dados Existentes</th>
             <th scope="col" colspan="1">3</th>
             <th scope="col" colspan="1"></th>
             <th scope="col" colspan="1">4.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[7]->descripcion }}</th>
+            <th scope="col" colspan="4">Vistan General de Soportes Libres</th>
             <th scope="col" colspan="1">4</th>
         </tr>
         <tr>
@@ -253,11 +253,11 @@
         </tr>
         <tr>
             <th scope="col" colspan="1">5.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[8]->descripcion }}</th>
+            <th scope="col" colspan="4">Vista de Antena MW Existente</th>
             <th scope="col" colspan="1">5</th>
             <th scope="col" colspan="1"></th>
             <th scope="col" colspan="1">6.00</th>
-            <th scope="col" colspan="4">{{ $equation->images[9]->descripcion }}</th>
+            <th scope="col" colspan="4">Vista de Antenas RF y RRU Existente</th>
             <th scope="col" colspan="1">6</th>
         </tr>
 

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('larga');
-            $table->string('departamento',20);
-            $table->string('provincia',20);
-            $table->string('distrito',20);
+            $table->string('departamento',30);
+            $table->string('provincia',30);
+            $table->string('distrito',30);
             $table->double('latitud',7);
             $table->double('longitud',7);
             $table->unsignedBigInteger('equation_id')->unique();
